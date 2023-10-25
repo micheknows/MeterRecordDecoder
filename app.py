@@ -72,9 +72,9 @@ def upload():
         'Date',
         'Time',
 
-        '=CONCATENATE("Flow",CHAR(10),"g/m")',
+        'Flow (g/m)',
 
-        '=CONCATENATE("Total",CHAR(10),"x1000Gal")'
+        'Total (x 1000 Gal)'
     ]
 
     print("Rows 5 thorugh 15")
