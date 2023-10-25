@@ -3,6 +3,9 @@ const form = document.querySelector('form');
 form.addEventListener('submit', () => {
   const submitBtn = form.querySelector('button[type="submit"]');
   submitBtn.disabled = true;
+
+  fileInput.value = '';
+  alert("Check your downloads for the spreadsheet");
 });
 
 // Clear file input after form submission
