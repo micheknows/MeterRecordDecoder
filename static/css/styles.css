@@ -1,0 +1,33 @@
+body {
+  padding-top: 56px;
+}
+
+.navbar {
+  background-color: #007bff;
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+
+.navbar .navbar-brand:hover {
+  color: #f8f9fa;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.form-control-file {
+  padding-top: 1.5rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}

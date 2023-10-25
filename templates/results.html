@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container mt-5">
+
+  <h1>Processed File</h1> 
+  
+  <p>Your uploaded file was successfully processed and converted to Excel format.</p>
+
+  <p>
+    <a href="{{ url_for('download') }}">
+      Click here to download the Excel file
+    </a>
+  </p>
+
+</div>
+
+{% endblock %}
