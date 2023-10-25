@@ -9,4 +9,5 @@ form.addEventListener('submit', () => {
 const fileInput = document.querySelector('#file');
 fileInput.addEventListener('change', () => {
   fileInput.value = '';
+  alert("Check your downloads for the spreadsheet");
 });
