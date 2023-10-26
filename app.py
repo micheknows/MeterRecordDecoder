@@ -80,7 +80,7 @@ def upload():
 
     df['Flow (g/m)'] = pd.to_numeric(df['Flow (g/m)'])
     df['Total (x 1000 Gal)'] = pd.to_numeric(df['Total (x 1000 Gal)'])
-    df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%y')
+    df['Date'] = pd.to_datetime(df['Date'], format='%y-%m-%d')
     df['Date'] = df['Date'].dt.strftime('%m-%d-%y')
 
     print("Rows 5 thorugh 15")
