@@ -77,6 +77,8 @@ def upload():
         'Total (x 1000 Gal)'
     ]
 
+    df['Flow (g/m)'] = pd.to_numeric(df['Flow (g/m)'])
+
     print("Rows 5 thorugh 15")
     print(df.iloc[5:15])
 
