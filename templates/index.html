@@ -4,12 +4,12 @@
 
 <div class="container mt-5">
 
-  <h1>File Upload</h1>
+  <h1>Meter Record Decoder App</h1>
+    <h2>Choose your flow meter output file with the file picker.  Then click submit.  You will automatically receive a download of an Excel spreadsheet with the formatted data.</h2>
   
   <form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data">
 
     <div class="form-group">
-      <label for="file">Select File</label>
       <input type="file" class="form-control-file" id="file" name="file">
     </div>
 

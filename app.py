@@ -98,7 +98,7 @@ def upload():
 
     output.seek(0)
 
-    return send_file(output, download_name='report.xlsx',
+    return send_file(output, download_name=file.filename + '_decoded.xlsx',
                      mimetype='application/xls')
 
 
