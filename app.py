@@ -78,6 +78,8 @@ def upload():
     ]
 
     df['Flow (g/m)'] = pd.to_numeric(df['Flow (g/m)'])
+    df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%y')
+    df['Date'] = df['Date'].dt.strftime('%m-%d-%y')
 
     print("Rows 5 thorugh 15")
     print(df.iloc[5:15])
