@@ -55,11 +55,12 @@ def upload():
 
         elif line.startswith('NET'):
             # Add to current row
-            net_regex = r'NET:\s+(\d+)x1000Gal'
+            net_regex = r'NET:\s*([+-]?\d*)x'
 
             match = re.search(net_regex, line)
             if match:
-                current_row['Total'] = match.group(1)
+                mytotal = match.group(1)
+                current_row['Total'] =mytotal
 
     # Append the last row
     data.append(current_row)
@@ -78,6 +79,7 @@ def upload():
     ]
 
     df['Flow (g/m)'] = pd.to_numeric(df['Flow (g/m)'])
+    df['Total (x 1000 Gal)'] = pd.to_numeric(df['Total (x 1000 Gal)'])
     df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%y')
     df['Date'] = df['Date'].dt.strftime('%m-%d-%y')
 
