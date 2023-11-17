@@ -74,9 +74,9 @@ def upload():
             if match:
                 mytotal = match.group(1)
                 current_row['Total'] =mytotal
-        if(counter<20):
-            print("counter is : " + str(counter))
-            print(current_row)
+        #if(counter<20):
+            #print("counter is : " + str(counter))
+            #print(current_row)
 
     # Append the last row
     if current_row and line:
