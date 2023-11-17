@@ -68,11 +68,14 @@ def upload():
 
         elif line.startswith('NET'):
             # Add to current row
-            net_regex = r'NET:\s*([+-]?\d*)x'
+            net_regex = r'NET:\s*([+-]?\d*)x(\d*)Gal'
 
             match = re.search(net_regex, line)
             if match:
                 mytotal = match.group(1)
+                print("original:  " + line)
+                mytotal = float(match.group(2)) / 1000 * float(match.group(1))
+                print("final:  " + str(mytotal))
                 current_row['Total'] =mytotal
         #if(counter<20):
             #print("counter is : " + str(counter))
