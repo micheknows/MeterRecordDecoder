@@ -25,23 +25,36 @@ def upload():
 
     data = []
 
+
     with open(temp_path.name) as f:
         lines = f.readlines()
         lines = [l.strip() for l in lines if l.strip()]
 
+    counter = -1
 
-    current_row = {}
+    current_row = {
+        'Date': None,
+        'Time': None,
+        'Flow': None,
+        'Total': None
+    }
 
     for line in lines:
+        counter=counter+1
+
 
         if date_regex.search(line):
 
             # Append current row
-            if current_row:
+            if current_row and line:
                 data.append(current_row)
+                current_row = {
+                    'Date': None,
+                    'Time': None,
+                    'Flow': None,
+                    'Total': None
+                }
 
-            # Reset row
-            current_row = {}
 
             # Set new date/time
             date, time = line.split()
@@ -61,9 +74,14 @@ def upload():
             if match:
                 mytotal = match.group(1)
                 current_row['Total'] =mytotal
+        if(counter<20):
+            print("counter is : " + str(counter))
+            print(current_row)
 
     # Append the last row
-    data.append(current_row)
+    if current_row and line:
+        data.append(current_row)
+
 
 
 
@@ -84,7 +102,7 @@ def upload():
     df['Date'] = df['Date'].dt.strftime('%m-%d-%y')
 
     print("Rows 5 thorugh 15")
-    print(df.iloc[5:15])
+    print(df.iloc[0:15])
 
     output = io.BytesIO()
 
