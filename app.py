@@ -7,7 +7,7 @@ import re
 app = Flask(__name__)
 app.config['MIMETYPE_MAP'] = {}
 
-date_regex = re.compile(r'\d{2}-\d{2}-\d{2}')
+date_regex = re.compile(r'\d{2,4}[-/]\d{1,2}[-/]\d{1,2}')
 
 
 @app.route('/')
